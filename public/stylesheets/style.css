@@ -1,9 +1,12 @@
-.thumbnail img{
-
-  max-height: 150px;
+.thumbnail img {
+    max-height: 150px;
 }
 
-.thumbnail .description{
+.thumbnail .description {
+    color: aquamarine;
+}
 
-  color: aquamarine;
+.price {
+    font-size: 16px;
+    font-weight: bold;
 }

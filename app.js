@@ -5,6 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require('express-handlebars');
 var mongoose = require('mongoose')
+var HandleBars = require('handlebars')
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -14,7 +17,7 @@ var app = express();
 mongoose.connect('mongodb://localhost:27017/Shopping')
 
 // view engine setup
-app.engine('.hbs', expressHbs({ defaultLayout: 'layout', extname: '.hbs' }))
+app.engine('.hbs', expressHbs({ defaultLayout: 'layout', extname: '.hbs',  handlebars: allowInsecurePrototypeAccess(HandleBars)}))
 app.set('view engine', '.hbs');
 
 app.use(logger('dev'));

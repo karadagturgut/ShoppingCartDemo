@@ -15,7 +15,7 @@ var products = [new Product({
         imagePath: "https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png",
         title: "Apple",
         description: "An apple is an edible fruit produced by an apple tree. Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus.",
-        price: "$0,99"
+        price: "$0,79"
 
     }),
     new Product({
@@ -29,7 +29,14 @@ var products = [new Product({
         imagePath: "https://gpi-degouwe.com/wp-content/uploads/2020/06/Potatoes.jpg",
         title: "Potato",
         description: "The potato is a root vegetable native to the Americas, a starchy tuber of the plant Solanum tuberosum, and the plant itself is a perennial in the nightshade family, Solanaceae.",
-        price: "$0,89"
+        price: "$0,99"
+
+    }),
+    new Product({
+        imagePath: "https://www.gardeningknowhow.com/wp-content/uploads/2020/03/primo-vantage-400x350.jpg",
+        title: "Cabbage",
+        description: "Cabbage is a leafy green, red, or white biennial plant grown as an annual vegetable crop for its dense-leaved heads. It is descended from the wild cabbage, and belongs to the 'cole crops' or brassicas, meaning it is closely related to broccoli and cauliflower; Brussels sprouts; and Savoy cabbage.",
+        price: "$1,09"
 
     }),
 

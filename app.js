@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require('express-handlebars');
 var mongoose = require('mongoose')
-var HandleBars = require('handlebars')
+var HandleBars = require('handlebars');
+var session = require('express-session');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 
@@ -14,16 +15,17 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/Shopping')
+mongoose.connect('mongodb://localhost:27017/Shopping', { useNewUrlParser: true })
 
 // view engine setup
-app.engine('.hbs', expressHbs({ defaultLayout: 'layout', extname: '.hbs',  handlebars: allowInsecurePrototypeAccess(HandleBars)}))
+app.engine('.hbs', expressHbs({ defaultLayout: 'layout', extname: '.hbs', handlebars: allowInsecurePrototypeAccess(HandleBars) }))
 app.set('view engine', '.hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({ secret: 'SecretWordIsSamurai', resave: false, saveUninitialized: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
